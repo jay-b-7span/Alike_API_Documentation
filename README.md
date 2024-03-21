@@ -5,7 +5,7 @@
 -    **URL**: <https://alike.io/>.
 -    **API**: `cmsPage`
       - **query**:
-            - query cmsPage($identifier: String) {
+            - ```query cmsPage($identifier: String) {
               cmsPage(identifier: $identifier) {
               identifier
               url_key
@@ -15,4 +15,4 @@
               meta_keywords
               __typename
                  }
-              }
+              }```

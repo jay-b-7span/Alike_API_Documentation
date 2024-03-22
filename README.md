@@ -5,7 +5,7 @@
 -    **URL**: <https://alike.io/>.
 -    **API**: `cmsPage`
       - **query**:
-            - ```
+            - ```graphql
                 query cmsPage($identifier: String) {
                    cmsPage(identifier: $identifier) {
                    identifier
@@ -17,4 +17,4 @@
                    __typename
                     }
                  }
-               
+               ```

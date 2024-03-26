@@ -4,7 +4,7 @@
 
 -    **URL**: <https://alike.io/>.
 -    **API**: `homepage_stories_products`
-      - **query**:
+      - **Query**:
            ```graphql
         query homepage_stories_products($pageSize: Int) {
         homepage_stories_products(pageSize: $pageSize) {
@@ -69,3 +69,25 @@
    -  This Graphql used for **Handcrafted Holiday Packages** section.
    -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
 
+  - **API:** `currency`
+    - **Query:**
+        -  ```graphql
+          {
+           currency {
+            ip_currency
+            available_currency_codes
+            base_currency_code
+            base_currency_symbol
+            default_display_currecy_code
+            default_display_currecy_symbol
+            default_display_currency_code
+            default_display_currency_symbol
+             exchange_rates {
+             currency_to
+              rate
+              __typename
+                }
+            __typename
+              }
+          }
+           ```

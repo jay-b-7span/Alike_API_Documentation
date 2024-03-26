@@ -405,8 +405,5 @@
            }
        ```
 
-##  **City Page**
-     - ijmoijcws
- 
 
            

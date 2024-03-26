@@ -6,7 +6,7 @@
 -    **API**: `cmsPage`
       - **query**:
            ```graphql
-                query homepage_stories_products($pageSize: Int) {
+        query homepage_stories_products($pageSize: Int) {
         homepage_stories_products(pageSize: $pageSize) {
     items {
       uid
@@ -58,4 +58,11 @@
     __typename
      }
      }
-           ```
+     ```
+           
+  - **variables:**
+           ```graphql
+        {
+            "pageSize": 9
+          }
+         ```

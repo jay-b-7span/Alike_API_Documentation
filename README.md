@@ -96,5 +96,67 @@
     - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
   - **API:** `new_products`
     - this Graphql used for **Best Selling Experiences** section.
-    - 
+    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/2ad1088a-b293-447b-bf7d-8f1f37701048)
+    - **Query:**
+        ```graphql
+            query new_products($input: NewProductsLimit!) {
+           new_products(input: $input) {
+            url_key
+            id
+            name
+            __typename
+            image {
+              url
+              __typename
+            }        
+            small_image {
+              url
+              __typename
+            }
+            thumbnail {
+              url
+              __typename
+            }
+            tour_cities
+            tour_category
+            exp_duration
+            exp_good_for
+            exp_languages
+            exp_transport_available
+            exp_ticket_confirmation
+            exp_type_of_ticket
+            exp_cancellation
+            exp_included_in_touristor
+            short_description_alike
+            strike_price_value
+            price_range {
+               maximum_price {
+                final_price {
+                  value
+                  __typename
+                }
+                __typename
+              }
+              minimum_price {
+                final_price {
+                  value
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            dynamicAttributes(fields: ["tour_cities", "tour_category"])
+          }
+        }
+        ```
+    - **variables:**
+       - ```graphql
+             {
+                "input": {
+                 "limit": 9
+                }
+             } 
+             
+
            

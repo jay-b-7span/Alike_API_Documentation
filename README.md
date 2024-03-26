@@ -61,7 +61,7 @@
      ```
            
   - **variables:**
-           ```graphql
+    ```graphql
         {
             "pageSize": 9
           }

@@ -3,7 +3,7 @@
 ##  **Home Page**
 
 -    **URL**: <https://alike.io/>.
--    **API**: `cmsPage`
+-    **API**: `homepage_stories_products`
       - **query**:
            ```graphql
         query homepage_stories_products($pageSize: Int) {

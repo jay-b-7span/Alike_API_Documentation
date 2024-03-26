@@ -66,3 +66,6 @@
                    "pageSize": 9
                 }
                 ```
+   -  This Graphql used for **Handcrafted Holiday Packages** section.
+   -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
+

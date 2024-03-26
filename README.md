@@ -535,4 +535,52 @@
           }
         }
      ```
-
+## **City Detail Page**
+-    **URL:** <https://alike.host/cities/dubai>
+-    **API:** `categories`
+-    Here categories GraphQl used for preticular city details and also used fro **faq** section.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/aede09c7-df8e-44c0-bb86-443ebc2025cf)
+-    **Query:**
+     ```graphql
+         query categories($filters: CategoryFilterInput) {
+          categories(filters: $filters) {
+            items {
+              uid
+              id
+              name
+              url_key
+              latitude_longitude
+              weather_description
+              best_time_to_visit {
+                best_month_to_visit
+                things_to_do
+                __typename
+              }
+              months_weather {
+                months
+                temperature
+                __typename
+              }
+              city_currency
+              city_timezone
+              city_faqs {
+                questions
+                answers
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "filters": {
+            "ids": {
+              "eq": 720
+            }
+          }
+        }
+     ```

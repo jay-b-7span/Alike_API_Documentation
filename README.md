@@ -584,3 +584,165 @@
           }
         }
      ```
+-    **API:** `products`
+-    This GraphQl used for a particular product's detail here **Filters** block.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/c9427ad2-9078-4114-9af1-0ee94f8ee5e0)
+-    **Query:**
+-    ```graphql
+         query products($search: String, $filter: ProductAttributeFilterInput, $pageSize: Int, $currentPage: Int, $sort: ProductAttributeSortInput) {
+          products(
+            search: $search
+            filter: $filter
+            pageSize: $pageSize
+            currentPage: $currentPage
+            sort: $sort
+          ) {
+            aggregations {
+              attribute_code
+              count
+              label
+              options {
+                count
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            items {
+              uid
+              id
+              url_key
+              product_likes
+              ins_days
+              name
+              short_description_alike
+              ins_tags
+              ins_city
+              strike_price_value
+              strike_price_percentage
+              dynamicAttributes(
+                fields: ["tour_cities", "ins_city", "tour_category", "ins_tags"]
+              )
+              is_liked
+              insider_data {
+                insider_name
+                insider_logo
+                insider_id
+                profile_url
+                is_followed
+                username
+                __typename
+              }
+              ins_traveller_type
+              __typename
+              image {
+                url
+                __typename
+              }
+              small_image {
+                url
+                __typename
+              }
+              thumbnail {
+                url
+                __typename
+              }
+              sku
+              type_id
+              tour_cities
+              tour_category
+              exp_duration
+              exp_good_for
+              exp_languages
+              exp_transport_available
+              exp_ticket_confirmation
+              exp_type_of_ticket
+              exp_cancellation
+              exp_included_in_touristor
+              price_range {
+                maximum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+            }
+            custom {
+              filters {
+                attribute_code
+                attribute_value
+                image
+                title
+                __typename
+              }
+              __typename
+            }
+            sort_fields {
+              default
+              options {
+                label
+                value
+                __typename
+              }
+              __typename
+            }
+            related_search_terms
+            did_you_know
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "currentPage": 1,
+          "pageSize": 6,
+          "search": "",
+          "filter": {
+            "tour_category": {
+              "in": []
+            },
+            "item_category": {
+              "in": []
+            },
+            "category_id": {
+              "in": [
+                720
+              ]
+            },
+            "insider_approval": {
+              "eq": "2"
+            }
+          },
+          "sort": {}
+        }
+     ```
+ 

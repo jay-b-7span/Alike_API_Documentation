@@ -70,6 +70,8 @@
    -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
 
   - **API:** `currency`
+    - This GraphQl is used for `currency`.
+    - here are five types of currency code available `GBP`, `EUR`, `INR`, `USD`, `AED`.
     - **Query:**
         -  ```graphql
           {
@@ -82,7 +84,7 @@
             default_display_currecy_symbol
             default_display_currency_code
             default_display_currency_symbol
-             exchange_rates {
+             exchange_rates {s
              currency_to
               rate
               __typename
@@ -91,7 +93,8 @@
               }
           }
            ```
-    - This GraphQl used for `currency`.
     - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
- 
+  - **API:** `new_products`
+    - this Graphql used for `Best Selling Experiences` section.
+    - 
            

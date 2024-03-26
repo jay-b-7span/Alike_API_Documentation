@@ -7,60 +7,60 @@
     -  This Graphql used for **Handcrafted Holiday Packages** section.
       -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
       - **Query**:
-           ```graphql
+        ```graphql
         query homepage_stories_products($pageSize: Int) {
-        homepage_stories_products(pageSize: $pageSize) {
-    items { 
-      uid
-      id
-      url_key
-      product_likes
-      ins_days
-      name
-      short_description_alike
-      ins_tags
-      ins_city
-      is_liked
-      insider_data {
-        insider_name
-        insider_logo
-        insider_id
-        profile_url
-        is_followed
-        username
-        __typename
-      }
-      ins_traveller_type
-      image {
-        url
-        __typename
-      }
-      icons {
-        icon_url
-        label
-        count
-        __typename
-      }
-      sku
-      type_id
-      price_range {
-        minimum_price {
-          regular_price {
-            value
-            currency
+          homepage_stories_products(pageSize: $pageSize) {
+            items { 
+              uid 
+              id
+              url_key
+              product_likes
+              ins_days
+              name
+              short_description_alike
+              ins_tags
+              ins_city
+              is_liked
+              insider_data {
+                insider_name
+                insider_logo
+                insider_id
+                profile_url
+                is_followed
+                username
+                __typename
+              }
+              ins_traveller_type
+              image {
+                url
+                __typename
+              }
+              icons {
+                icon_url
+                label
+                count
+                __typename
+              }
+              sku
+              type_id
+              price_range {
+                minimum_price {
+                  regular_price {
+                    value
+                    currency
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              dynamicAttributes(fields: ["ins_city", "ins_tags"])
+              __typename
+            }
             __typename
-          }
-          __typename
-        }
-        __typename
-      }
-      dynamicAttributes(fields: ["ins_city", "ins_tags"])
-      __typename
-    }
-    __typename
-     }
-     }
-     ```
+             }
+             }
+          ```
            
    - **variables:**
         ``` graphql
@@ -74,7 +74,7 @@
     - here are five types of currency code available `GBP`, `EUR`, `INR`, `USD`, `AED`.
     - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
     - **Query:**
-        -  ```graphql
+      ```graphql
           {
            currency {
             ip_currency
@@ -93,7 +93,7 @@
             __typename
               }
           }
-           ```
+      ```
   - **API:** `new_products`
     - this Graphql used for **Best Selling Experiences** section.
     - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/2ad1088a-b293-447b-bf7d-8f1f37701048)
@@ -405,5 +405,134 @@
            }
        ```
 
+## **City Page**
+-    **URL:** <https://alike.io/cities/>
+-    **API:** `categoryList`
+-    This GraphQl is used for serval cities.
+-   ![image](https://github.com/jay-b-7span/alike_api_document/assets/114227263/0f3e6104-b748-49af-b7e0-136d72434732)
+-    **Query:**
+       ```graphql
+         query categoryList($filters: CategoryFilterInput) {
+          categories(filters: $filters) {
+            total_count
+            items {
+              uid
+              level
+              name
+              url_key
+              image
+              children {
+                uid
+                level
+                name
+                children {
+                  uid
+                  level
+                  name
+                  image
+                  url_key
+                  product_count
+                  highlights {
+                    title
+                    url
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+       ```
+   **variables:**
+   ```graphql
+        {
+          "filters": {
+            "parent_id": {
+              "in": [
+                "717"
+              ]
+            },
+            "category_uid": {
+              "in": [
+                "NzE4",
+                "NzI1",
+                "NzQ5",
+                "ODE3",
+                "ODY3",
+                "ODc2"
+              ]
+            }
+          }
+        }
+   ```
+-   **API:** `Cities`
+-   This GraphQl used for **Best Places to visit** section.
+-   ![image](https://github.com/jay-b-7span/alike_api_document/assets/114227263/4392e211-fc8a-4051-b4b6-baf7121dffbb)
+-   **Query:**
+    ```graphql
+        {
+          Cities {
+            best {
+              title
+              months {
+                city {
+                  highlights {
+                    title
+                    url
+                    __typename
+                  }
+                  category_id
+                  category_uid
+                  image
+                  name
+                  url_key
+                  __typename
+                }
+                month
+                __typename
+              }
+              __typename
+            }
+            mostVisited {
+              title
+              city {
+                highlights {
+                  title
+                  url
+                  __typename
+                }
+                category_id
+                category_uid
+                image
+                name
+                url_key
+                __typename
+              }
+              __typename
+            }
+            discover {
+              title
+              city {
+                highlights {
+                  title
+                  url
+                  __typename
+                }
+                category_id
+                category_uid
+                image
+                name
+                url_key
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
 
-           

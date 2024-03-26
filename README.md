@@ -745,4 +745,394 @@
           "sort": {}
         }
      ```
- 
+ ## **Product Page:**
+ -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
+ -    **API:** `products`
+ -    This is GraphQl also used for product detail page.
+ -    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/e865a99d-800f-4286-af2e-49b22e2e8054)
+-    **Query:**
+     ```graphql
+         query products($search: String, $filter: ProductAttributeFilterInput) {
+          products(search: $search, filter: $filter) {
+            items {
+              api_connected
+              api_connected_label
+              attribute_set_id
+              available_from
+              available_to
+              musement_id
+              url_key
+              sku
+              id
+              name
+              categories {
+                name
+                uid
+                url_key
+                level
+                __typename
+              }
+              ticket_advance_time
+              strike_price_value
+              strike_price_percentage
+              __typename
+              ... on BundleProduct {
+                items {
+                  options {
+                    position
+                    product {
+                      sku
+                      id
+                      name
+                      is_transfer
+                      strike_price_value
+                      strike_price_percentage
+                      pass_included_zomato
+                      pass_included_text_zomato
+                      pass_included_tour
+                      pass_included_text_tour
+                      pass_included_sim
+                      pass_included_text_sim
+                      pass_included_wifi
+                      pass_included_text_wifi
+                      pass_included_nol
+                      pass_included_text_nol
+                      pass_included_visa
+                      pass_included_text_visa
+                      price_range {
+                        minimum_price {
+                          final_price {
+                            value
+                            __typename
+                          }
+                          __typename
+                        }
+                        __typename
+                      }
+                      exp_included
+                      exp_excluded
+                      touristor_saver {
+                        final_price
+                        image
+                        label
+                        name
+                        original_price
+                        type
+                        __typename
+                      }
+                      hide_adult
+                      hide_child
+                      hide_infant
+                      kit_availability {
+                        available {
+                          from
+                          to
+                          __typename
+                        }
+                        kit_id
+                        name
+                        not_available
+                        price
+                        price_adult
+                        price_child
+                        timeslots
+                        transfer_type
+                        type
+                        __typename
+                      }
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              globaltix_availability {
+                activity_id
+                id
+                name
+                price
+                variations {
+                  id
+                  isOpenDated
+                  maximumPax
+                  minimumPax
+                  name
+                  type
+                  visitDate {
+                    advanceBookingDays
+                    advanceBookingHours
+                    advanceBookingMinutes
+                    class
+                    id
+                    isAdvanceBooking
+                    isRequestVisitDate
+                    isVisitDateCompulsory
+                    ticketTypeGroup {
+                      class
+                      id
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              is_transfer
+              adult_label
+              hide_adult
+              hide_child
+              hide_infant
+              kit_availability {
+                available {
+                  from
+                  to
+                  timeslots
+                  __typename
+                }
+                kit_id
+                name
+                not_available
+                price
+                price_adult
+                price_child
+                timeslots
+                transfer_type
+                type
+                __typename
+              }
+              image {
+                url
+                __typename
+              }
+              tour_cities
+              exp_itinerary
+              tour_category
+              exp_duration
+              exp_good_for
+              exp_languages
+              exp_transport_available
+              exp_ticket_confirmation
+              exp_type_of_ticket
+              exp_cancellation
+              exp_included_in_touristor
+              short_description_alike
+              exp_included
+              exp_excluded
+              exp_more_information
+              description_alike
+              exp_cancellation_policy
+              exp_child_policy
+              exp_activity_details
+              exp_address
+              exp_timings
+              rayna_id
+              rayna_country_id
+              rayna_city_id
+              rayna_contract_id
+              media_gallery {
+                url
+                label
+                disabled
+                __typename
+              }
+              included_in_touristors {
+                url_key
+                id
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                exp_good_for
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                __typename
+              }
+              included_trips {
+                uid
+                id
+                url_key
+                product_likes
+                ins_days
+                name
+                short_description_alike
+                ins_tags
+                ins_city
+                is_liked
+                dynamicAttributes(fields: ["ins_city", "ins_traveller_type", "ins_tags"])
+                insider_data {
+                  insider_name
+                  insider_logo
+                  insider_id
+                  profile_url
+                  is_followed
+                  username
+                  __typename
+                }
+                ins_traveller_type
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                story_icons_count
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                sku
+                type_id
+                price_range {
+                  maximum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  minimum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              related_products {
+                url_key
+                id
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                exp_good_for
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                __typename
+              }
+              price_range {
+                maximum_price {
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                minimum_price {
+                  final_price {
+                    value
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              pass_included_zomato
+              pass_included_text_zomato
+              pass_included_tour
+              pass_included_text_tour
+              pass_included_sim
+              pass_included_text_sim
+              pass_included_wifi
+              pass_included_text_wifi
+              pass_included_nol
+              pass_included_text_nol
+              pass_included_visa
+              pass_included_text_visa
+              touristor_saver {
+                final_price
+                image
+                label
+                name
+                order
+                original_price
+                type
+                url_key
+                tour_category
+                __typename
+              }
+              dynamicAttributes(
+                fields: ["tour_cities", "exp_languages", "exp_good_for", "tour_category", "off_days", "api_connected", "api_connected_label"]
+              )
+            }
+            total_count
+            page_info {
+              current_page
+              page_size
+              total_pages
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "filter": {
+            "url_key": {
+              "eq": "farewell-tour-half-day-dubai-city-tour"
+            }
+          },
+          "pageSize": 1,
+          "currentPage": 1
+        }
+     ```

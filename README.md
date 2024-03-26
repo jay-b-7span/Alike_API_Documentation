@@ -91,3 +91,7 @@
               }
           }
            ```
+    - This GraphQl used for `currency`.
+    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
+ 
+           

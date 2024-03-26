@@ -60,9 +60,9 @@
      }
      ```
            
-  - **variables:**
-    ```graphql
-        {
-            "pageSize": 9
-          }
-         ```
+   - **variables:**
+        ```graphql
+               {
+                   "pageSize": 9
+                }
+                ```

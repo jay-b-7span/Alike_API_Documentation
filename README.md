@@ -4,6 +4,8 @@
 
 -    **URL**: <https://alike.io/>.
 -    **API**: `homepage_stories_products`
+    -  This Graphql used for **Handcrafted Holiday Packages** section.
+      -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
       - **Query**:
            ```graphql
         query homepage_stories_products($pageSize: Int) {
@@ -66,12 +68,11 @@
                  "pageSize": 9
               }
         ```
-   -  This Graphql used for **Handcrafted Holiday Packages** section.
-   -  ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/004f3825-6818-4189-9c37-40309ff6f235)
 
   - **API:** `currency`
     - This GraphQl is used for **currency**.
     - here are five types of currency code available `GBP`, `EUR`, `INR`, `USD`, `AED`.
+    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
     - **Query:**
         -  ```graphql
           {
@@ -93,7 +94,6 @@
               }
           }
            ```
-    - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/02b1109d-1dcf-44a3-b7fe-00ec5d0656e4)
   - **API:** `new_products`
     - this Graphql used for **Best Selling Experiences** section.
     - ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/2ad1088a-b293-447b-bf7d-8f1f37701048)

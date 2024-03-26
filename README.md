@@ -10,7 +10,7 @@
            ```graphql
         query homepage_stories_products($pageSize: Int) {
         homepage_stories_products(pageSize: $pageSize) {
-    items {
+    items { 
       uid
       id
       url_key

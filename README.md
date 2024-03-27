@@ -745,6 +745,165 @@
           "sort": {}
         }
      ```
+-    **API:** `categoryList`
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/ffb2c1cd-4146-469b-92ce-32f7b0226549)
+-    **Query:**
+      ```graphql
+        query categoryList($filters: CategoryFilterInput) {
+          categoryList(filters: $filters) {
+            name
+            uid
+            id
+            custom {
+              banner_title
+              banner_description
+              banner_image
+              hide_activity
+              hide_story
+              filters {
+                title
+                image
+                attribute_code
+                attribute_value
+                __typename
+              }
+              know_more_about {
+                content
+                identifier
+                title
+                __typename
+              }
+              faq {
+                content
+                identifier
+                title
+                __typename
+              }
+              __typename
+            }
+            activities_products {
+              title
+              items {
+                id
+                uid
+                sku
+                url_key
+                name
+                dynamicAttributes(fields: ["tour_cities", "tour_category"])
+                exp_cancellation
+                exp_duration
+                review_count
+                rating_summary
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                thumbnail {
+                  url
+                  __typename
+                }
+                price_range {
+                  minimum_price {
+                    final_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            stories_products {
+              title
+              items {
+                uid
+                id
+                url_key
+                product_likes
+                ins_days
+                name
+                short_description_alike
+                ins_tags
+                ins_city
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                dynamicAttributes(fields: ["ins_city", "ins_traveller_type", "ins_tags"])
+                is_liked
+                insider_data {
+                  insider_name
+                  insider_logo
+                  insider_id
+                  profile_url
+                  is_followed
+                  username
+                  __typename
+                }
+                ins_traveller_type
+                image {
+                  url
+                  __typename
+                }
+                small_image {
+                  url
+                  __typename
+                }
+                icons {
+                  icon_url
+                  label
+                  count
+                  __typename
+                }
+                sku
+                type_id
+                price_range {
+                  maximum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  minimum_price {
+                    regular_price {
+                      value
+                      currency
+                      __typename
+                    }
+                    __typename
+                  }
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+        {
+          "filters": {
+            "url_key": {
+              "eq": "singapore"
+            }
+          }
+        }
+     ```
  ## **Product Page:**
  -    **URL:** <https://alike.io/products/farewell-tour-half-day-dubai-city-tour>
  -    **API:** `products`
@@ -1195,4 +1354,434 @@
           }
         }
       ```
+-    **API:** `globaltix_variation_type`
+-    this API used for ticket selection in product page.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/cce576b5-069d-4dc9-a0aa-e69e3e83051d)
+-    **Query:**
+      ```graphql
+         query globaltix_variation_type($product_id: String, $variation_id: [String]) {
+          globaltix_variation_type(product_id: $product_id, variation_id: $variation_id) {
+            tickets {
+              id
+              advanceBookingDays
+              applyCapacity
+              availability
+              isAdvanceBooking
+              isRequestVisitDate
+              isVisitDateCompulsory
+              price
+              publishEnd
+              publishStart
+              questions {
+                class
+                id
+                optional
+                options
+                question
+                tourInfo
+                type {
+                  enumType
+                  name
+                  __typename
+                }
+                __typename
+              }
+              series
+              status
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+      ```graphql
+        {
+          "variation_id": [
+            "61532",
+            "61533"
+          ],
+          "product_id": "2074"
+        }
+      ```
+
+## **Hotel Page**
+-   **URL:** <https://alike.io/hotels/list?search=Dubai,%20United%20Arab%20Emirates&destinations=ChIJRcbZaklDXz4RYlEphFBu5r0&checkIn=2024-04-04&checkOut=2024-04-06&occupancies=%5B%7B%22paxes%22%3A%5B%7B%22age%22%3A25%7D,%7B%22age%22%3A29%7D%5D%7D%5D>
+-   **API:** `searchListGuzzleX`
+-   this API is used for serval hotels in particular cities.
+-   ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/4e1020b5-27df-49dd-a752-efbb8f2a6eee)
+-   **Query:**
+    ```graphql
+        query searchListGuzzleX($checkIn: String!, $checkOut: String!, $session: String, $occupancies: [RoomInputX!]!, $slug: String, $destinations: [String!], $hotels: [String!], $pageSize: Int, $onlyStatic: 
+        Boolean, $currentPage: Int, $sort: HotelSortXInput, $filter: [HotelFiltersXInput]) {
+          searchListGuzzleX(
+            checkIn: $checkIn
+            checkOut: $checkOut
+            session: $session
+            occupancies: $occupancies
+            slug: $slug
+            destinations: $destinations
+            hotels: $hotels
+            pageSize: $pageSize
+            onlyStatic: $onlyStatic
+            currentPage: $currentPage
+            sort: $sort
+            filter: $filter
+          ) {
+            error
+            hotels {
+              static
+              hotelCode
+              destinationCode
+              slug
+              status
+              name
+              title
+              boardCode
+              cancelPolicy {
+                cancelPenalties {
+                  currency
+                  deadline
+                  hoursBefore
+                  penaltyType
+                  value
+                  __typename
+                }
+                refundable
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              occupancies {
+                id
+                paxes {
+                  age
+                  __typename
+                }
+                __typename
+              }
+              rating
+              userRating
+              mainImage {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              medias {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              minRate {
+                currency
+                net
+                __typename
+              }
+              maxRate {
+                currency
+                net
+                __typename
+              }
+              displayPrice {
+                currency
+                net
+                __typename
+              }
+              propertyType
+              chainName
+              brandName
+              popularityScore
+              contentScore
+              remarks
+              location {
+                address
+                city
+                state
+                zipCode
+                country
+                coordinates {
+                  label
+                  latitude
+                  longitude
+                  __typename
+                }
+                __typename
+              }
+              descriptions {
+                text
+                type
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              facilities {
+                code
+                title
+                items {
+                  code
+                  name
+                  __typename
+                }
+                __typename
+              }
+              reviews {
+                count
+                highlightText
+                rating
+                tagLine
+                type
+                __typename
+              }
+              contact {
+                email
+                fax
+                telephone
+                web
+                __typename
+              }
+              filters {
+                code
+                values
+                __typename
+              }
+              options {
+                tax {
+                  net
+                  currency
+                  __typename
+                }
+                id
+                accommodationType
+                boardLabel
+                amenities {
+                  amenityCodeSupplier
+                  code
+                  texts
+                  type
+                  value
+                  __typename
+                }
+                boardCode
+                boardLabel
+                cancelPolicy {
+                  cancelPenalties {
+                    currency
+                    deadline
+                    hoursBefore
+                    penaltyType
+                    value
+                    __typename
+                  }
+                  refundable
+                  __typename
+                }
+                descriptions {
+                  type
+                  text
+                  __typename
+                }
+                price {
+                  currency
+                  net
+                  __typename
+                }
+                occupancies {
+                  id
+                  paxes {
+                    age
+                    __typename
+                  }
+                  __typename
+                }
+                remarks
+                filters {
+                  code
+                  values
+                  __typename
+                }
+                rooms {
+                  facilities {
+                    code
+                    title
+                    items {
+                      code
+                      name
+                      __typename
+                    }
+                    __typename
+                  }
+                  tax {
+                    net
+                    currency
+                    __typename
+                  }
+                  amenities {
+                    amenityCodeSupplier
+                    code
+                    texts
+                    type
+                    value
+                    __typename
+                  }
+                  beds {
+                    count
+                    shared
+                    type
+                    __typename
+                  }
+                  code
+                  description
+                  features {
+                    code
+                    __typename
+                  }
+                  legacyRoomId
+                  medias {
+                    code
+                    label
+                    order
+                    type
+                    url
+                    __typename
+                  }
+                  name
+                  occupancyRefId
+                  promotions {
+                    code
+                    start
+                    end
+                    name
+                    __typename
+                  }
+                  ratePlans {
+                    code
+                    start
+                    end
+                    name
+                    supplierCode
+                    __typename
+                  }
+                  refundable
+                  roomPrice {
+                    breakdown {
+                      start
+                      end
+                      price {
+                        currency
+                        net
+                        __typename
+                      }
+                      __typename
+                    }
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  supplierCode
+                  surcharges {
+                    chargeType
+                    code
+                    description
+                    mandatory
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  units
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            maps {
+              label
+              slug
+              latitude
+              longitude
+              __typename
+            }
+            isStaticRecords
+            pagination {
+              current
+              full
+              page
+              total
+              __typename
+            }
+            filters {
+              code
+              label
+              options {
+                code
+                count
+                name
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+    ```
+-   **variables:**
+     ```graphql
+        {
+          "checkIn": "2024-04-04",
+          "checkOut": "2024-04-06",
+          "currentPage": 1,
+          "pageSize": 10,
+          "search": "",
+          "occupancies": [
+            {
+              "paxes": [
+                {
+                  "age": 25
+                },
+                {
+                  "age": 29
+                }
+              ]
+            }
+          ],
+          "destinations": [
+            "ChIJRcbZaklDXz4RYlEphFBu5r0"
+          ],
+          "slug": "",
+          "filter": [],
+          "sort": {
+            "by": "distance",
+            "order": "ASC"
+          },
+          "onlyStatic": true
+        }
+     ```
+-    **API:** `searchListGuzzleX`
+-    this API used for filtration like Star **Rating**, **Property Type**, **Meals**, **Cancellation** etc.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/39bd6525-b2d2-42ee-8441-90d523c53d7d)
+ 
       

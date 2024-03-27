@@ -1136,3 +1136,63 @@
           "currentPage": 1
         }
      ```
+-    **API:** `getRaynaTickets`
+-    this API used for ticket.
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/7e58652b-a11f-4cb0-bda4-ad7391500bbd)
+-    **Query:**
+     ```graphql
+       query getRaynaTickets($input: RaynaProductInput!) {
+          getRaynaTickets(input: $input) {
+            default
+            display_price
+            id
+            name
+            __typename
+          }
+        }
+     ```
+-    **variables:**
+     ```graphql
+         {
+          "input": {
+            "id": "5116",
+            "product_id": 2490,
+            "group": "group_r",
+            "transfer": "41865",
+            "date": "2024/03/29",
+            "contract": "300"
+          }
+        }
+     ```   
+-    **API:** `getProduct`
+-    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/ef1b018a-6176-4edd-aca1-3ed3dd71df0a)
+-    **Query:**
+      ```graphql
+         query getProduct($input: RaynaProductInput!) {
+          getProduct(input: $input) {
+            transfer_type {
+              id
+              is_default
+              max_pax
+              min_pax
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+      ```graphql
+        {
+          "input": {
+            "id": "5116",
+            "product_id": 2490,
+            "group": "group_r",
+            "country": "13063",
+            "city": "13668",
+            "contract": "300"
+          }
+        }
+      ```
+      

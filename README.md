@@ -1783,5 +1783,745 @@
 -    **API:** `searchListGuzzleX`
 -    this API used for filtration like Star **Rating**, **Property Type**, **Meals**, **Cancellation** etc.
 -    ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/39bd6525-b2d2-42ee-8441-90d523c53d7d)
- 
+-    **Query:**
+      ```graphql
+         query searchListGuzzleX($checkIn: String!, $checkOut: String!, $session: String, $occupancies: [RoomInputX!]!, $slug: String, $destinations: [String!], $hotels: [String!], $pageSize: Int, 
+         $onlyStatic: Boolean, $currentPage: Int, $sort: HotelSortXInput, $filter: [HotelFiltersXInput]) {
+          searchListGuzzleX(
+            checkIn: $checkIn
+            checkOut: $checkOut
+            session: $session
+            occupancies: $occupancies
+            slug: $slug
+            destinations: $destinations
+            hotels: $hotels
+            pageSize: $pageSize
+            onlyStatic: $onlyStatic
+            currentPage: $currentPage
+            sort: $sort
+            filter: $filter
+          ) {
+            error
+            hotels {
+              static
+              hotelCode
+              destinationCode
+              slug
+              status
+              name
+              title
+              boardCode
+              cancelPolicy {
+                cancelPenalties {
+                  currency
+                  deadline
+                  hoursBefore
+                  penaltyType
+                  value
+                  __typename
+                }
+                refundable
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              occupancies {
+                id
+                paxes {
+                  age
+                  __typename
+                }
+                __typename
+              }
+              rating
+              userRating
+              mainImage {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              medias {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              minRate {
+                currency
+                net
+                __typename
+              }
+              maxRate {
+                currency
+                net
+                __typename
+              }
+              displayPrice {
+                currency
+                net
+                __typename
+              }
+              propertyType
+              chainName
+              brandName
+              popularityScore
+              contentScore
+              remarks
+              location {
+                address
+                city
+                state
+                zipCode
+                country
+                coordinates {
+                  label
+                  latitude
+                  longitude
+                  __typename
+                }
+                __typename
+              }
+              descriptions {
+                text
+                type
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              facilities {
+                code
+                title
+                items {
+                  code
+                  name
+                  __typename
+                }
+                __typename
+              }
+              reviews {
+                count
+                highlightText
+                rating
+                tagLine
+                type
+                __typename
+              }
+              contact {
+                email
+                fax
+                telephone
+                web
+                __typename
+              }
+              filters {
+                code
+                values
+                __typename
+              }
+              options {
+                tax {
+                  net
+                  currency
+                  __typename
+                }
+                id
+                accommodationType
+                boardLabel
+                amenities {
+                  amenityCodeSupplier
+                  code
+                  texts
+                  type
+                  value
+                  __typename
+                }
+                boardCode
+                boardLabel
+                cancelPolicy {
+                  cancelPenalties {
+                    currency
+                    deadline
+                    hoursBefore
+                    penaltyType
+                    value
+                    __typename
+                  }
+                  refundable
+                  __typename
+                }
+                descriptions {
+                  type
+                  text
+                  __typename
+                }
+                price {
+                  currency
+                  net
+                  __typename
+                }
+                occupancies {
+                  id
+                  paxes {
+                    age
+                    __typename
+                  }
+                  __typename
+                }
+                remarks
+                filters {
+                  code
+                  values
+                  __typename
+                }
+                rooms {
+                  facilities {
+                    code
+                    title
+                    items {
+                      code
+                      name
+                      __typename
+                    }
+                    __typename
+                  }
+                  tax {
+                    net
+                    currency
+                    __typename
+                  }
+                  amenities {
+                    amenityCodeSupplier
+                    code
+                    texts
+                    type
+                    value
+                    __typename
+                  }
+                  beds {
+                    count
+                    shared
+                    type
+                    __typename
+                  }
+                  code
+                  description
+                  features {
+                    code
+                    __typename
+                  }
+                  legacyRoomId
+                  medias {
+                    code
+                    label
+                    order
+                    type
+                    url
+                    __typename
+                  }
+                  name
+                  occupancyRefId
+                  promotions {
+                    code
+                    start
+                    end
+                    name
+                    __typename
+                  }
+                  ratePlans {
+                    code
+                    start
+                    end
+                    name
+                    supplierCode
+                    __typename
+                  }
+                  refundable
+                  roomPrice {
+                    breakdown {
+                      start
+                      end
+                      price {
+                        currency
+                        net
+                        __typename
+                      }
+                      __typename
+                    }
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  supplierCode
+                  surcharges {
+                    chargeType
+                    code
+                    description
+                    mandatory
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  units
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            maps {
+              label
+              slug
+              latitude
+              longitude
+              __typename
+            }
+            isStaticRecords
+            pagination {
+              current
+              full
+              page
+              total
+              __typename
+            }
+            filters {
+              code
+              label
+              options {
+                code
+                count
+                name
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ```
+-    **variables:**
+     ```graphql
+        {
+          "checkIn": "2024-04-04",
+          "checkOut": "2024-04-06",
+          "currentPage": 1,
+          "pageSize": 10,
+          "search": "",
+          "occupancies": [
+            {
+              "paxes": [
+                {
+                  "age": 25
+                },
+                {
+                  "age": 29
+                }
+              ]
+            }
+          ],
+          "destinations": [
+            "ChIJRcbZaklDXz4RYlEphFBu5r0"
+          ],
+          "slug": "",
+          "filter": [],
+          "sort": {
+            "by": "distance",
+            "order": "ASC"
+          },
+          "onlyStatic": false
+        }
+     ```
+ ## **Hotel Detail Page**
+-   **URL:** <https://alike.io/hotels/lapita-dubai-parks-resorts-autograph-collection-in-united-arab-emirates-dubai--lapita_dubai_parks_and_resorts?search=Dubai,%20United%20Arab%20Emirates&destinations=ChIJRcbZaklDXz4RYlEphFBu5r0&checkIn=2024-04-04&checkOut=2024-04-06&occupancies=%5B%7B%22paxes%22%3A%5B%7B%22age%22%3A25%7D,%7B%22age%22%3A29%7D%5D%7D%5D>
+-   **API:** `searchX`
+-   ![image](https://github.com/jay-b-7span/Alike_API_Documentation/assets/114227263/3b100555-74cf-4057-8f0c-dfcb95a6dc52)
+-   **Query:**
+     ```graphql
+         query searchX($checkIn: String!, $checkOut: String!, $session: String, $occupancies: [RoomInputX!]!, $slug: String, $destinations: [String!], $hotels: [String!], $pageSize: Int, $maxSize: Int, 
+         $currentPage: Int, $sort: HotelSortXInput, $filter: [HotelFiltersXInput]) {
+          searchX(
+            checkIn: $checkIn
+            checkOut: $checkOut
+            session: $session
+            occupancies: $occupancies
+            slug: $slug
+            destinations: $destinations
+            hotels: $hotels
+            pageSize: $pageSize
+            maxSize: $maxSize
+            currentPage: $currentPage
+            sort: $sort
+            filter: $filter
+          ) {
+            error
+            hotels {
+              hotelCode
+              destinationCode
+              slug
+              status
+              name
+              title
+              boardCode
+              cancelPolicy {
+                cancelPenalties {
+                  currency
+                  deadline
+                  hoursBefore
+                  penaltyType
+                  value
+                  __typename
+                }
+                refundable
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              occupancies {
+                id
+                paxes {
+                  age
+                  __typename
+                }
+                __typename
+              }
+              rating
+              userRating
+              mainImage {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              medias {
+                code
+                label
+                order
+                type
+                url
+                __typename
+              }
+              minRate {
+                currency
+                net
+                __typename
+              }
+              maxRate {
+                currency
+                net
+                __typename
+              }
+              displayPrice {
+                currency
+                net
+                __typename
+              }
+              propertyType
+              chainName
+              brandName
+              popularityScore
+              contentScore
+              remarks
+              location {
+                address
+                city
+                state
+                zipCode
+                country
+                coordinates {
+                  label
+                  latitude
+                  longitude
+                  __typename
+                }
+                __typename
+              }
+              descriptions {
+                text
+                type
+                __typename
+              }
+              amenities {
+                amenityCodeSupplier
+                code
+                texts
+                type
+                value
+                __typename
+              }
+              facilities {
+                code
+                title
+                items {
+                  code
+                  name
+                  __typename
+                }
+                __typename
+              }
+              reviews {
+                count
+                highlightText
+                rating
+                tagLine
+                type
+                __typename
+              }
+              contact {
+                email
+                fax
+                telephone
+                web
+                __typename
+              }
+              filters {
+                code
+                values
+                __typename
+              }
+              options {
+                tax {
+                  net
+                  currency
+                  __typename
+                }
+                id
+                accommodationType
+                boardLabel
+                amenities {
+                  amenityCodeSupplier
+                  code
+                  texts
+                  type
+                  value
+                  __typename
+                }
+                boardCode
+                boardLabel
+                cancelPolicy {
+                  cancelPenalties {
+                    currency
+                    deadline
+                    hoursBefore
+                    penaltyType
+                    value
+                    __typename
+                  }
+                  refundable
+                  __typename
+                }
+                descriptions {
+                  type
+                  text
+                  __typename
+                }
+                price {
+                  currency
+                  net
+                  __typename
+                }
+                occupancies {
+                  id
+                  paxes {
+                    age
+                    __typename
+                  }
+                  __typename
+                }
+                remarks
+                filters {
+                  code
+                  values
+                  __typename
+                }
+                rooms {
+                  facilities {
+                    code
+                    title
+                    items {
+                      code
+                      name
+                      __typename
+                    }
+                    __typename
+                  }
+                  tax {
+                    net
+                    currency
+                    __typename
+                  }
+                  amenities {
+                    amenityCodeSupplier
+                    code
+                    texts
+                    type
+                    value
+                    __typename
+                  }
+                  beds {
+                    count
+                    shared
+                    type
+                    __typename
+                  }
+                  code
+                  description
+                  features {
+                    code
+                    __typename
+                  }
+                  legacyRoomId
+                  medias {
+                    code
+                    label
+                    order
+                    type
+                    url
+                    __typename
+                  }
+                  name
+                  occupancyRefId
+                  promotions {
+                    code
+                    start
+                    end
+                    name
+                    __typename
+                  }
+                  ratePlans {
+                    code
+                    start
+                    end
+                    name
+                    supplierCode
+                    __typename
+                  }
+                  refundable
+                  roomPrice {
+                    breakdown {
+                      start
+                      end
+                      price {
+                        currency
+                        net
+                        __typename
+                      }
+                      __typename
+                    }
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  supplierCode
+                  surcharges {
+                    chargeType
+                    code
+                    description
+                    mandatory
+                    price {
+                      currency
+                      net
+                      __typename
+                    }
+                    __typename
+                  }
+                  units
+                  __typename
+                }
+                __typename
+              }
+              __typename
+            }
+            maps {
+              label
+              slug
+              latitude
+              longitude
+              __typename
+            }
+            isStaticRecords
+            pagination {
+              current
+              full
+              page
+              total
+              __typename
+            }
+            filters {
+              code
+              label
+              options {
+                code
+                count
+                name
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+     ```
+-   **variables:**
+    ```graphql
+         {
+          "checkIn": "2024-04-04",
+          "checkOut": "2024-04-06",
+          "currentPage": 1,
+          "pageSize": 10,
+          "search": "",
+          "occupancies": [
+            {
+              "paxes": [
+                {
+                  "age": 25
+                },
+                {
+                  "age": 29
+                }
+              ]
+            }
+          ],
+          "destinations": [],
+          "slug": "lapita-dubai-parks-resorts-autograph-collection-in-united-arab-emirates-dubai--lapita_dubai_parks_and_resorts",
+          "filter": [],
+          "sort": {
+            "by": "price",
+            "order": "ASC"
+          }
+        }
+     ```
+
       
